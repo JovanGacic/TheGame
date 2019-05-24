@@ -7,30 +7,41 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "questions")
-public class Question {
+@Table(name = "quest")
+public class Quest {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	
+	private String title;
+	
 	private String text;
 
-	public Question() {
+	public Quest() {
     }
 
-    public Question(Long id, String text) {
+    public Quest(Long id, String title, String text) {
         this.id = id;
+        this.title = title;
         this.text = text;
     }
 
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
     public String getText() {
         return text;
@@ -57,7 +68,7 @@ public class Question {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Question other = (Question) obj;
+		Quest other = (Quest) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -73,7 +84,7 @@ public class Question {
 
 	@Override
 	public String toString() {
-		return "Question [id=" + id + ", text=" + text + "]";
+		return "Quest [id=" + id + ", title=" + title + ", text=" + text + "]";
 	}
     
 }
