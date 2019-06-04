@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class QuestService implements IQuestService {
 
-	    @Autowired
-	    private QuestRepository questRepository;
+	@Autowired
+	private QuestRepository questRepository;
 
-	    @Override
-	    public List<Quest> findAll() {
-	    	List<Quest> quests = new ArrayList<>();
-	    	questRepository.findAll().forEach(quests::add);
-	    	return quests;
-	    }
-	
+	@Override
+	public List<Quest> findAll() {
+		List<Quest> quests = new ArrayList<>();
+		questRepository.findAll().forEach(quests::add);
+		return quests;
+	}
+
 }

@@ -7,11 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "quest")
+@Table(name = "quests")
 public class Quest {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	
 	private String title;

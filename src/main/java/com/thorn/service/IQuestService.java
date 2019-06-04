@@ -5,8 +5,6 @@ import java.util.List;
 
 public interface IQuestService {
 
-	    List<Quest> findAll();
+	List<Quest> findAll();
 
-}	
-
-
+}

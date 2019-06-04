@@ -11,11 +11,11 @@ import java.util.List;
 @RestController
 public class QuestController {
 
-	    @Autowired
-	    private IQuestService questService;
+	@Autowired
+	private IQuestService questService;
 
-	    @GetMapping("/quests")
-	    public List<Quest> findQuests() {
-	    	return questService.findAll();
-	    }
+	@GetMapping("/quests")
+	public List<Quest> getAllQuests() {
+		return questService.findAll();
+	}
 }
