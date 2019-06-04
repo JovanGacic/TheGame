@@ -11,6 +11,7 @@
 	<groupId>com.thorn</groupId>
 	<artifactId>TheGame</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>TheGame</name>
 	<description>Pilot version of TheGame (yet to be properly named)</description>
 
