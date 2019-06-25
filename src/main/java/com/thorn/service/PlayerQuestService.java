@@ -36,5 +36,18 @@ public class PlayerQuestService implements IPlayerQuestService {
 		playerQuestRepository.findByPlayerQuestIdentityQuestId(questId).forEach(playerQuests::add);
 		return playerQuests;
 	}
+	
+	public void addPlayerQuest(Long playerId, Long questId) {
+	PlayerQuest playerQuest = new PlayerQuest(new PlayerQuestIdentity(playerId, questId),0L);
+	playerQuestRepository.save(playerQuest);
+	}
+	
+	public void updatePlayerQuest(Long playerId, Long questId) {
+		PlayerQuestIdentity pqId = new PlayerQuestIdentity(playerId, questId); 
+		PlayerQuest pq = playerQuestRepository.findById(pqId)
+				.orElseThrow(() -> new EntityNotFoundException("No row found"));
+		pq.setQuestStatus(1L);
+		playerQuestRepository.save(pq);
+	}
 
 }
