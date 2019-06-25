@@ -18,4 +18,8 @@ public class PlayerController {
 		return playerService.findAll();
 	}
 
+	@PostMapping("/add")
+	public void addPlayer(@RequestBody Player player) {
+		playerService.addPlayer(player);
+	}
 }
